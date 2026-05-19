@@ -1,21 +1,21 @@
 services:
 
   frontend:
-    build: ./frontend
+    build: ./PracticaDiw1
     ports:
       - "5173:5173"
     volumes:
-      - ./frontend:/app
+      - ./PracticaDiw1:/app
       - /app/node_modules
     depends_on:
       - backend
 
   backend:
-    build: ./backend
+    build: ./diw
     ports:
       - "3000:3000"
     volumes:
-      - ./backend:/app
+      - ./diw:/app
       - /app/node_modules
     environment:
       DB_HOST: database
